@@ -62,7 +62,7 @@ void Game::Play_Game(Results* results, char first)
 					}
 				}
 				players[current_player]->Change_Score(temp_score);
-				if (players[current_player]->Get_Score() == 0)
+				if (players[current_player]->Get_Score() == 0 && players[current_player]->Get_Strat() != 0)
 				{
 					break;
 				}
@@ -71,11 +71,11 @@ void Game::Play_Game(Results* results, char first)
 			// std::cout << "Player 1 Score: " << players[0]->Get_Score() << std::endl;
 			// std::cout << "Player 2 Score: " << players[1]->Get_Score() << std::endl;
 		}
-		if (players[0]->Get_Score() == 0)
+		if (players[0]->Get_Score() == 0 && players[0]->Get_Strat() != 0)
 		{
 			players[0]->Add_Win();
 		}
-		else if (players[1]->Get_Score() == 0)
+		else if (players[1]->Get_Score() == 0 && players[1]->Get_Strat() != 0)
 		{
 			players[1]->Add_Win();
 		}

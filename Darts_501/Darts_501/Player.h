@@ -33,7 +33,5 @@ public:
 	void Set_Strat(char strat);
 	char Get_Strat();
 
-	bool Check_Score(short int hit);
-
 	void Reset_Wins();
 };

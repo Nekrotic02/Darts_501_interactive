@@ -58,20 +58,6 @@ float Player::Get_Wins()
 	return wins;
 }
 
-bool Player::Check_Score(short int hit)
-{
-	int check = score - hit;
-
-	if (check == 1 || check < 0)
-	{
-		return 0;
-	}
-	else
-	{
-		return 1;
-	}
-}
-
 char Player::Get_Strat()
 {
 	return strat;

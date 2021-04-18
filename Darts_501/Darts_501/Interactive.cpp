@@ -109,14 +109,14 @@ void Interactive::SinglePlayer(Results* results, char first)
 						temp_score = 50;
 						break;
 					}
-					else if (temp_score == 0)
+					else if (temp_score == 0 && players[current_player]->Get_Strat() != 0)
 					{
 						break;
 					}
 				}
 
 				players[current_player]->Change_Score(temp_score);
-				if (players[current_player]->Get_Score() == 0)
+				if (players[current_player]->Get_Score() == 0 && players[current_player]->Get_Strat() != 0)
 				{
 					break;
 				}
@@ -125,13 +125,13 @@ void Interactive::SinglePlayer(Results* results, char first)
 
 			current_player = !current_player;
 
-			if (players[0]->Get_Score() == 0)
+			if (players[0]->Get_Score() == 0 && players[0]->Get_Strat() != 0)
 			{
 				players[0]->Add_Win();
 
 				std::cout << "Winner!!: " << players[0]->Get_Name() << "\n\n";
 			}
-			else if (players[1]->Get_Score() == 0)
+			else if (players[1]->Get_Score() == 0 && players[1]->Get_Strat() != 0)
 			{
 				players[1]->Add_Win();
 				std::cout << "Winner!!: " << players[1]->Get_Name() << "\n\n";
@@ -231,14 +231,14 @@ void Interactive::MultiPlayer(Results* results, char first)
 						temp_score = 50;
 						break;
 					}
-					else if (temp_score == 0)
+					else if (temp_score == 0 && players[current_player]->Get_Strat() != 0)
 					{
 						break;
 					}
 				}
 				players[current_player]->Change_Score(temp_score);
 				//system("Pause");
-				if (players[current_player]->Get_Score() == 0)
+				if (players[current_player]->Get_Score() == 0 && players[current_player]->Get_Strat() != 0)
 				{
 					break;
 				}
@@ -246,13 +246,13 @@ void Interactive::MultiPlayer(Results* results, char first)
 			}
 			current_player = !current_player;
 		}
-		if (players[0]->Get_Score() == 0)
+		if (players[0]->Get_Score() == 0 && players[0]->Get_Strat() != 0)
 		{
 			players[0]->Add_Win();
 
 			std::cout << "Winner!!: " << players[0]->Get_Name() << "\n\n";
 		}
-		else if (players[1]->Get_Score() == 0)
+		else if (players[1]->Get_Score() == 0 && players[1]->Get_Strat() != 0)
 		{
 			players[1]->Add_Win();
 			std::cout << "Winner!!: " << players[1]->Get_Name() << "\n\n";
