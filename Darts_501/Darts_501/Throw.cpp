@@ -24,7 +24,7 @@ int Throw::Throw_Single(Player* current_player)
 {
 	int random = rand() % 100 + 1;
 
-	if (current_player->Get_Target() == 20)
+	if (current_player->Get_Target() == 25)
 	{
 		if (random <= current_player->Get_Accuracy())
 		{

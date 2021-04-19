@@ -12,6 +12,7 @@ void Results::Add_Results(bool winner, Player* player_1, Player* player_2)
 {
 	if (winner == 0)
 	{
+		// dependong on if the winner is player 1 the add the number of wins that player 2 got to the playerTwo array
 		if (player_2->Get_Wins() == 0)
 		{
 			playerTwo[0]++;
@@ -43,6 +44,7 @@ void Results::Add_Results(bool winner, Player* player_1, Player* player_2)
 	}
 	else if (winner == 1)
 	{
+		// if player 2 has won the game then check to see how many games player 1 won the game in relation
 		if (player_1->Get_Wins() == 0)
 		{
 			playerOne[6]++;
@@ -77,6 +79,7 @@ void Results::Add_Results(bool winner, Player* player_1, Player* player_2)
 void Results::calculate(int games)
 {
 	// loop for player 2 wins
+	// calculate the success rate depending on the number of games played and the number of games that were won at that frequencies
 	for (int i{}; i <= 6; i++)
 	{
 		float result = (playerTwo[i] / games) * 100.f;
@@ -92,6 +95,7 @@ void Results::calculate(int games)
 }
 void  Results::get_results(int games, Player* player_1, Player* player_2)
 {
+	// display the % results of those frequencies
 	std::cout << "Results from " << games << " Simulations:\n\n";
 	std::cout << player_1->Get_Name() << ":" << player_2->Get_Name() << "    Frequency    \n";
 	std::cout << "   6:7        " << frequencies[0] << "%\n";
