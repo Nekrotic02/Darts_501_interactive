@@ -120,6 +120,7 @@ void Playable()
 
 int main()
 {
+	srand((int)time(0));
 	while (true) // loop as many times as the user indicates.
 	{
 		int choice{};
