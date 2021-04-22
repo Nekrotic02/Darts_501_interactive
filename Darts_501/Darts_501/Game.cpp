@@ -54,7 +54,7 @@ void Game::Play_Game(Results* results, char first)
 						temp_score = temp_score - hit; // take the hit away from the temp score for checking if it was valid
 						if (temp_score == 1 || temp_score < 0) // bust if the player is in the negative or has a value of 1 and set the score to 50
 						{
-							temp_score = 50;
+							temp_score = temp_score + hit;
 							break;
 						}
 						else if (temp_score == 0) // valid if they won
@@ -68,6 +68,12 @@ void Game::Play_Game(Results* results, char first)
 						players[current_player]->Increase_Round_Win();
 						break;
 					}
+				}
+				if (players[current_player]->Get_Score() == 0)
+				{
+					players[0]->Reset_Score();
+					players[1]->Reset_Score();
+					break;
 				}
 				current_player = !current_player; // swap the current player value to access the other pointer in the array
 			}

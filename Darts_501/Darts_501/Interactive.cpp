@@ -21,11 +21,15 @@ void Interactive::SinglePlayer(Results* results, char first)
 		{
 			while (players[0]->Get_Round_Wins() != 3 && players[1]->Get_Round_Wins() != 3)
 			{
+				int temp_score = players[current_player]->Get_Score();
 				for (short int shots{}; shots < 2; shots++)
 				{
-					int temp_score = players[current_player]->Get_Score();
 					for (short int throws{}; throws < 3; throws++)
 					{
+						if (players[current_player]->Get_Score() == 0)
+						{
+							break;
+						}
 						int hit{};
 						int strat{};
 						switch (current_player)
@@ -89,11 +93,13 @@ void Interactive::SinglePlayer(Results* results, char first)
 						if (hit == (players[current_player]->Get_Target() * strat_check))
 						{
 							std::cout << "\nTarget Hit!!" << std::endl;
+							std::cout << "\nHit: " << hit;
+							std::cout << "\n\n";
 							system("Pause");
 						}
-						else if (players[current_player]->Get_Strat() == 3 && hit == 50)
+						else if (strat_check == 4 && hit == 50)
 						{
-							std::cout << "\nTarget Hit!!" << std::endl;
+							std::cout << "\nBull Hit!!" << std::endl;
 							system("Pause");
 						}
 						else
@@ -108,24 +114,30 @@ void Interactive::SinglePlayer(Results* results, char first)
 						if (temp_score == 1 || temp_score < 0)
 						{
 							std::cout << "\nBust!\n";
-							temp_score = 50;
+							temp_score = temp_score + hit;
 							break;
 						}
 						else if (temp_score == 0 && players[current_player]->Get_Strat() != 0)
 						{
+							std::cout << "\nRound Winner!: " << players[current_player]->Get_Name();
 							break;
 						}
 					}
 
 					players[current_player]->Change_Score(temp_score);
-					if (players[current_player]->Get_Score() == 0 && players[current_player]->Get_Strat() != 0 && players[current_player]->Get_Strat() != 2)
+					if (players[current_player]->Get_Score() == 0)
 					{
 						players[current_player]->Increase_Round_Win();
 						break;
 					}
 					system("CLS");
 				}
-
+				if (players[current_player]->Get_Score() == 0)
+				{
+					players[0]->Reset_Score();
+					players[1]->Reset_Score();
+					break;
+				}
 				current_player = !current_player;
 			}
 
@@ -236,7 +248,7 @@ void Interactive::MultiPlayer(Results* results, char first)
 						if (temp_score == 1 || temp_score < 0)
 						{
 							std::cout << "\nBust!\n";
-							temp_score = 50;
+							temp_score = temp_score + hit;
 							break;
 						}
 						else if (temp_score == 0)
@@ -248,10 +260,17 @@ void Interactive::MultiPlayer(Results* results, char first)
 					//system("Pause");
 					if (players[current_player]->Get_Score() == 0 && players[current_player]->Get_Strat() != 0)
 					{
+						std::cout << "\nRound Winner!: " << players[current_player]->Get_Name();
 						players[current_player]->Increase_Round_Win();
 						break;
 					}
 					system("CLS");
+				}
+				if (players[current_player]->Get_Score() == 0)
+				{
+					players[0]->Reset_Score();
+					players[1]->Reset_Score();
+					break;
 				}
 				current_player = !current_player;
 			}
