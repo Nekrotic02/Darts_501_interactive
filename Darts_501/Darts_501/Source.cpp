@@ -79,9 +79,11 @@ void Simulation()
 		new_game->First_Player(player_1, 0);
 		new_game->First_Player(player_2, 1);
 		new_game->Play_Game(results, first);
+		delete new_game;
 	}
 	results->calculate(games); // calcuate the results
 	results->get_results(games, player_1, player_2); // dislpay the results
+	delete player_1, player_2;
 }
 
 void Playable()

@@ -69,9 +69,11 @@ void SinglePlayer()
 		new_Int->First_Player(AI, 0); // assign  the players to the pointer array
 		new_Int->First_Player(User, 1);
 		new_Int->SinglePlayer(results, first); // play the single player function
+		delete new_Int;
 	}
 	results->calculate(games); // calculate the results
 	results->get_results(games, AI, User); // display the statistics
+	delete AI, User;
 }
 
 void MultiPlayer()
@@ -154,7 +156,9 @@ void MultiPlayer()
 		new_int->First_Player(player_1, 0); // store into the correct position in the array
 		new_int->First_Player(player_2, 1);
 		new_int->MultiPlayer(results, first); // play the multiplayer function game
+		delete new_int;
 	}
 	results->calculate(games); // calculate the results
 	results->get_results(games, player_1, player_2); // display the results
+	delete player_1, player_2;
 }

@@ -11,6 +11,7 @@ private:
 	short int throws;
 	float wins;
 	short int target;
+	short int round_wins;
 
 	char strat;
 
@@ -34,4 +35,8 @@ public:
 	char Get_Strat();
 
 	void Reset_Wins();
+
+	void Increase_Round_Win();
+	void Reset_Round_Wins();
+	int Get_Round_Wins();
 };

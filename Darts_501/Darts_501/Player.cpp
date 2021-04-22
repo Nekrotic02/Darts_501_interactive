@@ -9,6 +9,7 @@ Player::Player(std::string PlayerName, short int Accuracy)
 	wins = 0;
 	target = 0;
 	strat = 0;
+	round_wins = 0;
 }
 Player::~Player()
 {
@@ -76,4 +77,19 @@ void Player::Reset_Wins()
 void Player::Reset_Score()
 {
 	score = 501;
+}
+
+void Player::Increase_Round_Win()
+{
+	round_wins++;
+}
+
+int Player::Get_Round_Wins()
+{
+	return round_wins;
+}
+
+void Player::Reset_Round_Wins()
+{
+	round_wins = 0;
 }
