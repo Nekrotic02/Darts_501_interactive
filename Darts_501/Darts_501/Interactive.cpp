@@ -290,19 +290,19 @@ void Interactive::MultiPlayer(Results* results, char first)
 		players[1]->Reset_Round_Wins();
 		system("Pause");
 		system("CLS");
-		bool champ;
-		if (players[0]->Get_Wins() > players[1]->Get_Wins())
-		{
-			champ = false;
-		}
-		else
-		{
-			champ = true;
-		}
-		results->Add_Results(champ, players[0], players[1]);
-		players[0]->Reset_Wins();
-		players[1]->Reset_Wins();
 	}
+	bool champ;
+	if (players[0]->Get_Wins() > players[1]->Get_Wins())
+	{
+		champ = false;
+	}
+	else
+	{
+		champ = true;
+	}
+	results->Add_Results(champ, players[0], players[1]);
+	players[0]->Reset_Wins();
+	players[1]->Reset_Wins();
 }
 void Interactive::First_Player(Player* current_player, char position)
 {
