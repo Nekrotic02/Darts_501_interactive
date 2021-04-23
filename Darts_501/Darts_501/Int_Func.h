@@ -73,7 +73,7 @@ void SinglePlayer()
 	}
 	results->calculate(games); // calculate the results
 	results->get_results(games, AI, User); // display the statistics
-	delete AI, User; // delete the old objects as not to fill the heap with junk
+	delete AI, User, results; // delete the old objects as not to fill the heap with junk
 }
 
 void MultiPlayer()
@@ -160,5 +160,5 @@ void MultiPlayer()
 	}
 	results->calculate(games); // calculate the results
 	results->get_results(games, player_1, player_2); // display the results
-	delete player_1, player_2; // delete the old player objects to not fill the heap with junk
+	delete player_1, player_2, results; // delete the old player objects to not fill the heap with junk
 }

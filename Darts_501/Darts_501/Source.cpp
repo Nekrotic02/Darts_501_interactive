@@ -83,7 +83,7 @@ void Simulation()
 	}
 	results->calculate(games); // calcuate the results
 	results->get_results(games, player_1, player_2); // dislpay the results
-	delete player_1, player_2; // delete the player objects as not to fill the heap with old data
+	delete player_1, player_2, results; // delete the player objects as not to fill the heap with old data
 }
 
 void Playable()

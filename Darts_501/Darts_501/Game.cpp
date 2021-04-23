@@ -54,7 +54,7 @@ void Game::Play_Game(Results* results, char first)
 						temp_score = temp_score - hit; // take the hit away from the temp score for checking if it was valid
 						if (temp_score == 1 || temp_score < 0) // bust if the player is in the negative or has a value of 1 and set the score to 50
 						{
-							temp_score = temp_score + hit;
+							temp_score = players[current_player]->Get_Score();
 							break;
 						}
 						else if (temp_score == 0) // valid if they won

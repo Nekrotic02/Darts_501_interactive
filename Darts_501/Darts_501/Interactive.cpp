@@ -26,10 +26,6 @@ void Interactive::SinglePlayer(Results* results, char first)
 				{
 					for (short int throws{}; throws < 3; throws++)
 					{
-						if (players[current_player]->Get_Score() == 0)
-						{
-							break;
-						}
 						int hit{};
 						int strat{};
 						switch (current_player)
@@ -114,7 +110,7 @@ void Interactive::SinglePlayer(Results* results, char first)
 						if (temp_score == 1 || temp_score < 0)
 						{
 							std::cout << "\nBust!\n";
-							temp_score = temp_score + hit;
+							temp_score = players[current_player]->Get_Score();
 							break;
 						}
 						else if (temp_score == 0 && players[current_player]->Get_Strat() != 0)
@@ -248,7 +244,7 @@ void Interactive::MultiPlayer(Results* results, char first)
 						if (temp_score == 1 || temp_score < 0)
 						{
 							std::cout << "\nBust!\n";
-							temp_score = temp_score + hit;
+							temp_score = players[current_player]->Get_Score();
 							break;
 						}
 						else if (temp_score == 0)
