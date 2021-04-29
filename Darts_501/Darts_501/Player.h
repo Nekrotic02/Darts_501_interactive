@@ -9,7 +9,7 @@ private:
 	short int score;
 	short int accuracy;
 	short int throws;
-	float wins;
+	int wins;
 	short int target;
 	short int round_wins;
 
@@ -27,7 +27,7 @@ public:
 	short int Get_Target();
 	void newGame();
 	void Add_Win();
-	float Get_Wins();
+	int Get_Wins();
 
 	void Reset_Score();
 

@@ -10,68 +10,32 @@ Results::~Results()
 }
 void Results::Add_Results(bool winner, Player* player_1, Player* player_2)
 {
+	int player_One = player_1->Get_Wins();
+	int player_Two = player_2->Get_Wins();
 	if (winner == 0)
 	{
-		// dependong on if the winner is player 1 the add the number of wins that player 2 got to the playerTwo array
-		if (player_2->Get_Wins() == 0)
+		switch (player_Two)
 		{
-			playerTwo[0]++;
-		}
-		else if (player_2->Get_Wins() == 1)
-		{
-			playerTwo[1]++;
-		}
-		else if (player_2->Get_Wins() == 2)
-		{
-			playerTwo[2]++;
-		}
-		else if (player_2->Get_Wins() == 3)
-		{
-			playerTwo[3]++;
-		}
-		else if (player_2->Get_Wins() == 4)
-		{
-			playerTwo[4]++;
-		}
-		else if (player_2->Get_Wins() == 5)
-		{
-			playerTwo[5]++;
-		}
-		else if (player_2->Get_Wins() == 6)
-		{
-			playerTwo[6]++;
+		case 0:playerTwo[0]++; break;
+		case 1:playerTwo[1]++; break;
+		case 2:playerTwo[2]++; break;
+		case 3:playerTwo[3]++; break;
+		case 4:playerTwo[4]++; break;
+		case 5:playerTwo[5]++; break;
+		case 6:playerTwo[6]++; break;
 		}
 	}
 	else if (winner == 1)
 	{
-		// if player 2 has won the game then check to see how many games player 1 won the game in relation
-		if (player_1->Get_Wins() == 0)
+		switch (player_One)
 		{
-			playerOne[6]++;
-		}
-		else if (player_1->Get_Wins() == 1)
-		{
-			playerOne[5]++;
-		}
-		else if (player_1->Get_Wins() == 2)
-		{
-			playerOne[4]++;
-		}
-		else if (player_1->Get_Wins() == 3)
-		{
-			playerOne[3]++;
-		}
-		else if (player_1->Get_Wins() == 4)
-		{
-			playerOne[2]++;
-		}
-		else if (player_1->Get_Wins() == 5)
-		{
-			playerOne[1]++;
-		}
-		else if (player_1->Get_Wins() == 6)
-		{
-			playerOne[0]++;
+		case 0:playerOne[6]++; break;
+		case 1:playerOne[5]++; break;
+		case 2:playerOne[4]++; break;
+		case 3:playerOne[3]++; break;
+		case 4:playerOne[2]++; break;
+		case 5:playerOne[1]++; break;
+		case 6:playerOne[0]++; break;
 		}
 	}
 }

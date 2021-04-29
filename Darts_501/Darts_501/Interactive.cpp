@@ -13,7 +13,7 @@ void Interactive::SinglePlayer(Results* results, char first)
 	short int current_player = first;
 	Throw new_Throw;
 
-	for (int i{}; i < 13; i++)
+	while (players[0]->Get_Wins() != 7 && players[1]->Get_Wins() != 7)
 	{
 		players[0]->Reset_Score();
 		players[1]->Reset_Score();
@@ -164,7 +164,7 @@ void Interactive::MultiPlayer(Results* results, char first)
 	short int current_player = first;
 	Throw new_Throw;
 
-	for (int i{}; i < 13; i++)
+	while (players[0]->Get_Wins() != 7 && players[1]->Get_Wins() != 7)
 	{
 		players[0]->Reset_Score();
 		players[1]->Reset_Score();

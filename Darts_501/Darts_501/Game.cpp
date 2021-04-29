@@ -21,7 +21,7 @@ void Game::Play_Game(Results* results, char first)
 	short int current_player = first; // take who ever is first and store it as the current player value to access the pointer array
 	Throw new_Throw; // create a new throw object to throw the darts
 
-	for (int i = 0; i < 13; i++) // playing 13 sets per game
+	while (players[0]->Get_Wins() != 7 && players[1]->Get_Wins() != 7) // playing 13 sets per game
 	{
 		players[0]->Reset_Score(); // reset the score upon successful complettion of a game
 		players[1]->Reset_Score();

@@ -54,7 +54,7 @@ void Player::Add_Win()
 	wins++;
 }
 
-float Player::Get_Wins()
+int Player::Get_Wins()
 {
 	return wins;
 }
