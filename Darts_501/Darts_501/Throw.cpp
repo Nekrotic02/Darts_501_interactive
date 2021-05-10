@@ -132,6 +132,11 @@ void Throw::Strategy(Player* current_player)
 {
 	if (current_player->Get_Score() > 61)
 	{
+		current_player->Set_Target(20);
+		current_player->Set_Strat(2);
+	}
+	else if (current_player->Get_Score() == 61)
+	{
 		current_player->Set_Target(11);
 		current_player->Set_Strat(0);
 	}
@@ -156,17 +161,22 @@ void Throw::Strategy(Player* current_player)
 					current_player->Set_Target(current_player->Get_Score() - 40);
 					current_player->Set_Strat(0);
 				}
+				else if (current_player->Get_Score() == 40)
+				{
+					current_player->Set_Target(20);
+					current_player->Set_Target(1); 
+				}
 				else
 				{
 					current_player->Set_Target(current_player->Get_Score() / 2);
-					current_player->Set_Strat(0);
+					current_player->Set_Strat(1);
 				}
 			}
 		}
 		else
 		{
 			current_player->Set_Target(1);
-			current_player->Set_Strat(1);
+			current_player->Set_Strat(0);
 		}
 	}
 }

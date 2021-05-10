@@ -1,5 +1,4 @@
 #pragma once
-//#include "Throw.h"
 #include "Player.h"
 #include "Results.h"
 #include <iostream>

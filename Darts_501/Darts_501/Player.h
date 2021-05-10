@@ -8,7 +8,6 @@ private:
 	std::string name;
 	short int score;
 	short int accuracy;
-	short int throws;
 	int wins;
 	short int target;
 	short int round_wins;
